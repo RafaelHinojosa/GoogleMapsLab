@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.ErrorDialogFragment;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -50,6 +51,7 @@ import permissions.dispatcher.RuntimePermissions;
 
 import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
+// Project Description https://courses.codepath.com/courses/android_university_fast_track/unit/11#!exercises
 @RuntimePermissions
 public class MapDemoActivity extends AppCompatActivity implements GoogleMap.OnMapLongClickListener {
 
@@ -142,6 +144,7 @@ public class MapDemoActivity extends AppCompatActivity implements GoogleMap.OnMa
                         String snippet = ((EditText) alertDialog.findViewById(R.id.etSnippet)).
                                 getText().toString();
 
+                        /* Buuble effect
                         // Define color of marker icon
                         // IconGenerator iconGenerator = new IconGenerator(MapDemoActivity.this);
                         // Possible color options:
@@ -151,7 +154,11 @@ public class MapDemoActivity extends AppCompatActivity implements GoogleMap.OnMa
                         // Bitmap bitmap = iconGenerator.makeIcon(title);
                         // Use BitmapDescriptorFactory to create the marker
                         // BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap(bitmap);
+                        */
 
+                        // Define Default Marker
+                        BitmapDescriptor defaultMarker =
+                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN);
 
                         // Define custom marker
                         BitmapDescriptor customMarker =
